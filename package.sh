@@ -31,11 +31,12 @@ package_jar() {
 base=$(dirname $(readlink -f "$0"))
 work="$base/work"
 download="$base/download"
+PATH=$PATH:$(gem environment gemdir)/bin
 
 set -e
 
 clean
 name=selenium-server-standalone
-version=2.20.0
+version=2.33.0
 get
 package_jar

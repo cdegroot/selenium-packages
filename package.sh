@@ -24,7 +24,7 @@ package_jar() {
     log "Package JAR $name - $version"
     mkdir -p "$work/$version/usr/lib/selenium"
     cd "$work"
-    cp "$download/$version/$name-${version}.jar" "$work/$version/usr/lib/selenium"
+    cp "$download/$version/$name-${version}.jar" "$work/$version/usr/lib/selenium/$name.jar"
     fpm -s dir -t deb --name "$name" --version "$version" -a all -C "$work/$version" .
 }
 
